@@ -42,11 +42,11 @@ kubectl apply -f kube-manifests/01-Sample-Application -n qa
 
 # Access Dev Application
 kubectl get svc -n dev
-http://<public-ip>/app1/index.html
+http://loadbalancer-ip/app1/index.html
 
 # Access Dev Application
 kubectl get svc -n qa
-http://<public-ip>/app1/index.html
+http://loadbalancer-ip/app1/index.html
 ```
 
 ## Step-03: Create AD Group, Role Assignment and User for Dev 
@@ -56,7 +56,7 @@ AKS_CLUSTER_ID=$(az aks show --resource-group aks-rg3 --name aksdemo3 --query id
 echo $AKS_CLUSTER_ID
 
 # Create Azure AD Group
-DEV_AKS_GROUP_ID=$(az ad group create --display-name devaksteam --mail-nickname devaksteam --query objectId -o tsv)    
+DEV_AKS_GROUP_ID=$(az ad group create --display-name devaksteam --mail-nickname devaksteam --query id -o tsv)  
 echo $DEV_AKS_GROUP_ID
 
 # Create Role Assignment 
@@ -68,9 +68,9 @@ az role assignment create \
 # Create Dev User
 DEV_AKS_USER_OBJECT_ID=$(az ad user create \
   --display-name "AKS Dev1" \
-  --user-principal-name aksdev1@stacksimplifygmail.onmicrosoft.com \
-  --password @AKSDemo123 \
-  --query objectId -o tsv)
+  --user-principal-name aksdev1@itsprashanth327gmail.onmicrosoft.com \
+  --password @Adunuri327# \
+  --query id -o tsv)
 echo $DEV_AKS_USER_OBJECT_ID  
 
 # Associate Dev User to Dev AKS Group
@@ -79,7 +79,7 @@ az ad group member add --group devaksteam --member-id $DEV_AKS_USER_OBJECT_ID
 
 ## Step-04: Test Dev User Authentication to Portal
 - URL: https://portal.azure.com
-- Username: aksdev1@stacksimplifygmail.onmicrosoft.com
+- Username: aksdev1@itsprashanth327gmail.onmicrosoft.com
 - Password: @AKSDemo123
 
 
