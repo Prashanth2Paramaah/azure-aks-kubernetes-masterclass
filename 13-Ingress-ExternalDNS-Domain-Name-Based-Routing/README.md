@@ -48,13 +48,13 @@ az network dns record-set a list -g dns-zones -z kubeoncloud.com
 ## Step-05: Access Applications
 ```t
 # Access App1
-http://eapp1.kubeoncloud.com/app1/index.html
+http://eapp1.demodevopsinsights.com/app1/index.html
 
 # Access App2
-http://eapp2.kubeoncloud.com/app2/index.html
+http://eapp2.demodevopsinsights.com/app2/index.html
 
 # Access Usermgmt Web App
-http://eapp3.kubeoncloud.com
+http://eapp3.demodevopsinsights.com
 Username: admin101
 Password: password101
 
@@ -70,7 +70,7 @@ kubectl delete -R -f kube-manifests/
 az network dns record-set a list -g <Resource-Group-dnz-zones> -z <yourdomain.com>
 
 # Replace DNS Zones Resource Group and yourdomain
-az network dns record-set a list -g dns-zones -z kubeoncloud.com
+az network dns record-set a list -g azure-dns -z demodevopsinsights.com
 ```
 
 ## Ingress Annotation Reference
