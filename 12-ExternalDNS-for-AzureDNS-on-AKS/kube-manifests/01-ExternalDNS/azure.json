@@ -1,7 +1,7 @@
 {
   "tenantId": "6d14f8d3-ec4a-43d9-b18e-a518abdf0db1",
   "subscriptionId": "024fc9d5-4dd2-46df-81d5-a07d65625e01",
-  "resourceGroup": "dns-zones", 
+  "resourceGroup": "azure-dns", 
   "useManagedIdentityExtension": true,
   "userAssignedIdentityID": "5ed65963-a358-4840-9ff1-be4565065709"
 }
